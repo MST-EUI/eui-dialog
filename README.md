@@ -1,2 +1,2 @@
 # eui-dialog
-eui-dialog component
+Dialog弹窗组件

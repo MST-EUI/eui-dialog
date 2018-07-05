@@ -24,7 +24,7 @@
   "keywords": [
     "react",
     "react-component",
-    "eui-EmptyData",
+    "eui-dialog",
     "eui"
   ],
   "jest": {
