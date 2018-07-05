@@ -1,2 +1,2 @@
 # eui-dialog
-a eui component
+eui-dialog component

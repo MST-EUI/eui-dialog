@@ -1,0 +1,61 @@
+.#{$prefix}-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0 none; 
+  .#{$prefix} {
+    position: relative;
+    margin: 0 auto;
+    top: 100px;
+
+    &-content {
+      position: relative;
+      background:rgba(255,255,255,1);
+      box-shadow:0px 5px 20px 0px rgba(223,227,236,0.6);
+      border-radius:2px;
+      overflow: hidden;
+    }
+
+    &-header {
+      padding: 12px 40px 16px 30px;
+    }
+    
+    &-title {
+      color:rgba(182,194,204,1);
+      font-size:20px;
+      line-height:26px;
+    }
+
+    &-close {
+      cursor: pointer;
+      border: 0;
+      background: transparent;
+      font-size: 21px;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      font-weight: 700;
+      line-height: 1;
+      color: #ccc;
+      &-x:after {
+        content: '×'
+      }
+  
+      &:hover {
+        color: #2f86ff;
+      }
+    }
+
+    &-body {
+      padding: 16px 30px 32px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  }
+}
+
