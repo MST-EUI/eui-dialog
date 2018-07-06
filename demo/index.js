@@ -43,6 +43,7 @@ class Demo extends React.Component {
         <Dialog
           ref={c => this.dialog =c}
           title="这是dialog的标题"
+          width="390"
           visible={this.state.visible}
           onOk={() => this.handleOk()}
           onCancel={() => this.handleCancel()}
