@@ -21,13 +21,35 @@ export default class Dialog extends React.Component {
     locale: 'zh-cn',
   };
 
+  handleOk() {
+    this.props.onOk();
+  }
+
+  handleCancel() {
+    this.props.onCancel();
+  }
+
   render() {
     const { props } = this;
 
+    const { footer, visible } = props;  
 
+    const defaultFooter = [
+      <button className='btn btn-cancel' onClick={() => this.handleCancel()}>
+        取消
+      </button>,
+      <button className='btn btn-ok' onClick={() => this.handleOk()}>
+        确定
+      </button>
+    ];
 
     return (
-      <RcDialog {...props} />
+      <RcDialog
+        footer={props.footer || defaultFooter}
+        visible={visible}
+        ref={c => this.rcDialog = c}
+        {...props}
+      />
     );
   }
 }

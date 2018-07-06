@@ -1,4 +1,9 @@
 import Dialog from './Dialog';
 
-module.exports = Dialog;
+
+Dialog.confirm = () => {
+    console.log('this is confirm function')
+};
+
+export default Dialog;
 
