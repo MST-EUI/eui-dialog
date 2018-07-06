@@ -23,15 +23,14 @@ ReactDOM.render(
 
 # API
 
-
- 参数 | 类型 | 默认值 |  说明 
- ---  | ---- | ---- | ---- | ----- 
- title | String \| ReactElement | 无 | 标题 
- className | String | 无 | 容器类名
- prefixCls | String | `"eui-dialog"` | 自定义类名前缀 
- visible | Boolean | `false` | 对话框是否可见
- width | String \| Number | `"520px"` | 宽度
- locale | String | `zh-cn` | 国际化(`zh-cn`, `en`)
- maskClosable | Boolean | `false` | 点击蒙层是否允许关闭
+参数 | 类型 | 默认值 |  说明 
+---  | ---- | ---- | ----
+title | String \| ReactElement | 无 | 标题 
+className | String | 无 | 容器类名
+prefixCls | String | `"eui-dialog"` | 自定义类名前缀 
+visible | Boolean | `false` | 对话框是否可见
+width | String \| Number | `"520px"` | 宽度
+locale | String | `zh-cn` | 国际化(`zh-cn`, `en`)
+maskClosable | Boolean | `false` | 点击蒙层是否允许关闭
 
 
