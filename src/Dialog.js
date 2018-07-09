@@ -32,14 +32,16 @@ export default class Dialog extends React.Component {
   render() {
     const { props } = this;
 
-    const { footer, visible } = props;  
+    const { footer, visible, locale } = props;
+
+    const i18nText = i18n[locale];
 
     const defaultFooter = [
       <button className='btn btn-cancel' onClick={() => this.handleCancel()}>
-        取消
+        {i18nText['cancel']}
       </button>,
       <button className='btn btn-ok' onClick={() => this.handleOk()}>
-        确定
+        {i18nText['ok']}
       </button>
     ];
 

@@ -35,11 +35,18 @@ class Demo extends React.Component {
     this.closeModal();
   }
 
+  showConfirm() {
+    confirm({
+      title: '这是一个confirm的title',
+      content: '这是一个confirm的content'
+    })
+  }
+
   render() {
     return (
       <div className="demo">
         <h1>基本用法</h1>
-        <button onClick={() => this.showModal()}>show dialog</button>
+        <button onClick={() => this.showModal()}>Show Dialog</button>
         <Dialog
           ref={c => this.dialog =c}
           title="这是dialog的标题"
@@ -51,6 +58,9 @@ class Demo extends React.Component {
         >
           <p>这是一个对话框</p>
         </Dialog>
+
+        <h1>使用confirm</h1>
+        <button onClick={this.showConfirm}>Confirm Dialog</button>
       </div>
     );
   }

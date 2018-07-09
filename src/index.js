@@ -1,8 +1,14 @@
 import Dialog from './Dialog';
+import confirm from './confirm';
 
 
-Dialog.confirm = () => {
-    console.log('this is confirm function')
+Dialog.confirm = (props) => {
+    const config = {
+        type: 'confirm',
+        okCancel: true,
+        ...props
+    };
+    return confirm(config);
 };
 
 export default Dialog;
