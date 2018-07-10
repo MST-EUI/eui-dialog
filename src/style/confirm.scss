@@ -3,5 +3,65 @@ $confirmPrefix: 'eui-confirm';
 .#{$confirmPrefix} {
     .#{$prefix}-body {
         padding: 30px 40px;
+        .eui-icon {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 20px;
+            line-height: 26px;
+            width: 26px;
+            height: 26px;
+            margin-right: 10px;
+            border-radius: 50%;
+            color: #fff;
+            font-style: normal;
+            text-align: center;
+            font-weight: 600;
+            &.eui-icon-confirm {
+                background-color: #ffb70b;
+                &:after {
+                    content: 'i';
+                }
+            }
+            &.eui-icon-success {
+                background-color: #31dacf;
+                &:after {
+                    content: '✓';
+                }
+            }
+            &.eui-icon-error {
+                background-color: #ff667d;
+                &:after {
+                    content: '×';
+                }
+            }
+            &.eui-icon-info {
+                background-color: #2e86ff;
+                &:after {
+                    content: 'i';
+                }
+            }
+        }
+    }
+    &-title {
+        color:rgba(182,194,204,1);
+        font-size:20px;
+        line-height:26px;
+    }
+    &-content {
+        margin-left: 36px;
+        margin-top: 10px;
+        color: #434F59;
+        font-size: 14px;
+        line-height: 22px;
+    }
+    &-action {
+        margin-top: 30px;
+        text-align: center;
+        button {
+            margin-right: 20px;
+            &:last-child {
+            margin-right: 0px;
+            }
+        }
     }
 }

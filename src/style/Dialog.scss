@@ -1,74 +1,90 @@
-.#{$prefix}-wrap {
-  position: fixed;
-  overflow: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1050;
-  -webkit-overflow-scrolling: touch;
-  outline: 0 none;
-  .#{$prefix} {
+
+
+.#{$prefix} {
+  position: relative;
+  margin: 0 auto;
+  top: 250px;
+  &-wrap {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0 none;
+    &.vertical-center-dialog {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      >.#{$prefix} {
+        top: 0px;
+      }
+    }
+  }
+  &-content {
     position: relative;
-    margin: 0 auto;
-    top: 250px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 5px 20px 0px rgba(80,91,101,.6);
+    border-radius:2px;
+    overflow: hidden;
+  }
 
-    &-content {
-      position: relative;
-      background:rgba(255,255,255,1);
-      box-shadow:0px 5px 20px 0px rgba(80,91,101,.6);
-      border-radius:2px;
-      overflow: hidden;
-    }
-
-    &-header {
-      padding: 12px 40px 16px 30px;
-    }
-    
-    &-title {
-      color:rgba(182,194,204,1);
-      font-size:20px;
-      line-height:26px;
-    }
-
-    &-close {
-      cursor: pointer;
-      border: 0;
-      background: transparent;
-      font-size: 21px;
-      position: absolute;
-      right: 12px;
-      top: 12px;
-      font-weight: 700;
-      line-height: 1;
-      color: #ccc;
-      &-x:after {
-        content: '×'
-      }
+  &-header {
+    padding: 12px 40px 16px 30px;
+  }
   
-      &:hover {
-        color: #2f86ff;
-      }
+  &-title {
+    color:rgba(182,194,204,1);
+    font-size:20px;
+    line-height:26px;
+  }
+
+  &-close {
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    font-size: 21px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #ccc;
+    &-x:after {
+      content: '×'
     }
 
-    &-body {
-      padding: 10px 30px;
+    &:hover {
+      color: #2f86ff;
+      outline: none;
     }
+  }
 
-    &-footer {
-      padding: 10px 10px 30px;
-      text-align: center;
-      button {
-        outline: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        margin-right: 20px;
-        &:last-child {
-          margin-right: 0px;
-        }
+  &-body {
+    padding: 10px 30px;
+    color: #434F59;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &-footer {
+    padding: 10px 30px 30px;
+    text-align: center;
+    button {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0px;
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .#{$prefix} {
+    width: auto!important;
+    margin:10px;
   }
 }
 

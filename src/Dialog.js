@@ -9,6 +9,8 @@ import './style/index.scss';
 
 const { PropTypes } = React;
 
+const isIE = () => window.navigator.userAgent.indexOf('MSIE') >= 1;
+
 export default class Dialog extends React.Component {
   static propTypes = {
     prefixCls: PropTypes.string,
@@ -16,9 +18,11 @@ export default class Dialog extends React.Component {
 
   static defaultProps = {
     prefixCls: 'eui-dialog',
-    width: '520px',
-    maskClosable: false,
+    width: '390px',
+    maskClosable: true,
     locale: 'zh-cn',
+    onOk: () => {},
+    onCancel: () => {},
   };
 
   handleOk() {
@@ -44,9 +48,14 @@ export default class Dialog extends React.Component {
         {i18nText['ok']}
       </button>
     ];
+    const wrapClassName = classnames({
+      [props.wrapClassName]: !!props.wrapClassName,
+      'vertical-center-dialog': !isIE,
+    })
 
     return (
       <RcDialog
+        wrapClassName={wrapClassName}
         footer={props.footer || defaultFooter}
         visible={visible}
         ref={c => this.rcDialog = c}
