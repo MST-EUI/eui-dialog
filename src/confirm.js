@@ -68,7 +68,7 @@ export default function confirm (props = {}) {
     const defaultPorps = {
         ...props,
         visible: true,
-        locale: 'zh-cn',
+        locale: props.locale || 'zh-cn',
         close,
     };
 

@@ -9,17 +9,23 @@ import './style/index.scss';
 
 const { PropTypes } = React;
 
-const isIE = () => window.navigator.userAgent.indexOf('MSIE') >= 1;
+const isIE = window.navigator.userAgent.indexOf('MSIE') >= 1;
 
 export default class Dialog extends React.Component {
   static propTypes = {
     prefixCls: PropTypes.string,
+    width: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
+    locale: PropTypes.string,
+    onOk: PropTypes.func,
+    onCancel: PropTypes.func,
   };
 
   static defaultProps = {
     prefixCls: 'eui-dialog',
     width: '390px',
-    maskClosable: true,
     locale: 'zh-cn',
     onOk: () => {},
     onCancel: () => {},

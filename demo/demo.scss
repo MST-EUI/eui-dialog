@@ -1,9 +1,15 @@
 .demo {
+    padding: 30px;
+    h1 {
+        font-size: 30px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
     button {
         margin-right: 20px;
         outline: none;
         border: none;
-        padding: 0;
+        padding: 0 20px;
         cursor: pointer;
         line-height: 40px;
         border-radius: 2px;
