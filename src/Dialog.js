@@ -27,6 +27,8 @@ export default class Dialog extends React.Component {
     prefixCls: 'eui-dialog',
     width: '390px',
     locale: 'zh-cn',
+    animation: 'zoom',
+    maskAnimation: 'fade',
     onOk: () => {},
     onCancel: () => {},
   };
@@ -59,8 +61,13 @@ export default class Dialog extends React.Component {
       'vertical-center-dialog': !isIE,
     })
 
+    const transitionName = props.transitionName || `${props.prefixCls}-${props.animation}`;
+    const maskTransitionName = props.maskTransitionName || `${props.prefixCls}-${props.maskAnimation}`;
+
     return (
       <RcDialog
+        transitionName={transitionName}
+        maskTransitionName={maskTransitionName}
         wrapClassName={wrapClassName}
         footer={props.footer || defaultFooter}
         visible={visible}
