@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Dialog from '../src/index';
+import Dialog from '../dist/index';
 
 import './demo.scss';
 const { confirm, success, error, info } = Dialog;
