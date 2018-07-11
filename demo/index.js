@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Dialog from '../src/index';
+
 import './demo.scss';
 const { confirm, success, error, info } = Dialog;
 const { log } = console;
@@ -24,7 +25,7 @@ const i18nText = {
   }
 }
 
-const confirmFunc = ({locale}) => {
+const confirmFunc = ({locale = 'zh-cn'}) => {
   confirm({
     locale,
     title: i18nText[locale].confirmTitle,
@@ -32,7 +33,7 @@ const confirmFunc = ({locale}) => {
   })
 }
 
-const successFunc = ({locale}) => {
+const successFunc = ({locale = 'zh-cn'}) => {
   success({
     locale,
     title: i18nText[locale].successTitle,
@@ -40,7 +41,7 @@ const successFunc = ({locale}) => {
   })
 }
 
-const errorFunc = ({locale}) => {
+const errorFunc = ({locale = 'zh-cn'}) => {
   error({
     locale,
     title: '这是一个error的title',
@@ -48,7 +49,7 @@ const errorFunc = ({locale}) => {
   })
 }
 
-const infoFunc = ({locale}) => {
+const infoFunc = ({locale = 'zh-cn'}) => {
   info({
     locale,
     title: '这是一个info的title',

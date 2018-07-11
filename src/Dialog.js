@@ -47,10 +47,10 @@ export default class Dialog extends React.Component {
     const i18nText = i18n[locale];
 
     const defaultFooter = [
-      <button className='btn btn-cancel' onClick={() => this.handleCancel()}>
+      <button key="cancel" className='btn btn-cancel' onClick={() => this.handleCancel()}>
         {i18nText['cancel']}
       </button>,
-      <button className='btn btn-ok' onClick={() => this.handleOk()}>
+      <button key="ok" className='btn btn-ok' onClick={() => this.handleOk()}>
         {i18nText['ok']}
       </button>
     ];
