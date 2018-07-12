@@ -1,9 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
-import i18n from './i18n';
-
 import RcDialog from 'rc-dialog';
 import 'rc-dialog/assets/index.css';
+import i18n from './i18n';
 
 import './style/index.scss';
 
@@ -15,12 +14,14 @@ export default class Dialog extends React.Component {
   static propTypes = {
     prefixCls: PropTypes.string,
     width: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
+      PropTypes.string,
+      PropTypes.number,
     ]),
     locale: PropTypes.string,
     onOk: PropTypes.func,
     onCancel: PropTypes.func,
+    animation: PropTypes.string,
+    maskAnimation: PropTypes.string,
   };
 
   static defaultProps = {
@@ -44,17 +45,17 @@ export default class Dialog extends React.Component {
   render() {
     const { props } = this;
 
-    const { footer, visible, locale } = props;
+    const { visible, locale } = props;
 
     const i18nText = i18n[locale];
 
     const defaultFooter = [
-      <button key="cancel" className='btn btn-cancel' onClick={() => this.handleCancel()}>
-        {i18nText['cancel']}
+      <button key="cancel" className="btn btn-cancel" onClick={() => this.handleCancel()}>
+        {i18nText.cancel}
       </button>,
-      <button key="ok" className='btn btn-ok' onClick={() => this.handleOk()}>
-        {i18nText['ok']}
-      </button>
+      <button key="ok" className="btn btn-ok" onClick={() => this.handleOk()}>
+        {i18nText.ok}
+      </button>,
     ];
     const wrapClassName = classnames({
       [props.wrapClassName]: !!props.wrapClassName,
@@ -71,7 +72,7 @@ export default class Dialog extends React.Component {
         wrapClassName={wrapClassName}
         footer={props.footer || defaultFooter}
         visible={visible}
-        ref={c => this.rcDialog = c}
+        ref={(c) => { this.rcDialog = c; }}
         {...props}
       />
     );

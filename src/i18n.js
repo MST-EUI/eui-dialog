@@ -5,7 +5,7 @@ module.exports = {
     isee: '知道了',
     confirm: '确定',
   },
-  'en': {
+  en: {
     ok: 'OK',
     cancel: 'Cancel',
     isee: 'OK',
