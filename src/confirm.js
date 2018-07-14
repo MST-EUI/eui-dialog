@@ -5,8 +5,6 @@ import Dialog from './Dialog';
 import i18n from './i18n';
 import './style/index.scss';
 
-const { PropTypes } = React;
-
 const clickFn = (fn, close) => {
   if (fn) {
     let ret;
@@ -64,41 +62,6 @@ const ConfirmDialog = (props) => {
       </div>
     </Dialog>
   );
-};
-
-ConfirmDialog.propTypes = {
-  prefixCls: PropTypes.string,
-  visible: PropTypes.boolean,
-  okCancel: PropTypes.boolean,
-  title: PropTypes.string,
-  content: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
-  type: PropTypes.string,
-  className: PropTypes.string,
-  onOk: PropTypes.func,
-  onCancel: PropTypes.func,
-  close: PropTypes.func,
-  okText: PropTypes.string,
-  cancelText: PropTypes.string,
-  locale: PropTypes.string,
-};
-
-ConfirmDialog.defaultProps = {
-  prefixCls: 'eui-confirm',
-  visible: true,
-  okCancel: true,
-  title: '',
-  content: '',
-  type: 'confirm',
-  className: '',
-  onOk: () => {},
-  onCancel: () => {},
-  close: () => {},
-  locale: 'zh-cn',
-  okText: i18n['zh-cn'].ok,
-  cancelText: i18n['zh-cn'].cancel,
 };
 
 export default function confirm(props = {}) {

@@ -152,7 +152,7 @@ class I18n extends React.Component {
 
   render() {
     return (
-      <div className="basic">
+      <div className="i18n">
         <button onClick={() => this.showModal()}>i18n Dialog</button>
         <Dialog
           locale="en"

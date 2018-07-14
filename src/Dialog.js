@@ -60,7 +60,7 @@ export default class Dialog extends React.Component {
     const wrapClassName = classnames({
       [props.wrapClassName]: !!props.wrapClassName,
       'vertical-center-dialog': !isIE,
-    })
+    });
 
     const transitionName = props.transitionName || `${props.prefixCls}-${props.animation}`;
     const maskTransitionName = props.maskTransitionName || `${props.prefixCls}-${props.maskAnimation}`;
