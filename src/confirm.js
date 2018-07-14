@@ -123,5 +123,5 @@ export default function confirm(props = {}) {
 
   return {
     close,
-  }
+  };
 }
