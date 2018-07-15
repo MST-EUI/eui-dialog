@@ -26,13 +26,25 @@ export default class Dialog extends React.Component {
 
   static defaultProps = {
     prefixCls: 'eui-dialog',
-    width: '390px',
+    width: '520px',
     locale: 'zh-cn',
     animation: 'zoom',
     maskAnimation: 'fade',
     onOk: () => {},
     onCancel: () => {},
   };
+
+  componentDidUpdate() {
+    const { props } = this;
+    // 如果内容宽度超过520px，则底部操作按钮居右对齐
+    if (props.visible) {
+      const dlgBody = this.rcDialog._component.body;
+      const dlgFooter = document.querySelector(`.${props.prefixCls}-footer`);
+      if (dlgBody.offsetWidth >= 520) {
+        dlgFooter.style.textAlign = 'right';
+      }
+    }
+  }
 
   handleOk() {
     this.props.onOk();
@@ -41,6 +53,7 @@ export default class Dialog extends React.Component {
   handleCancel() {
     this.props.onCancel();
   }
+
 
   render() {
     const { props } = this;

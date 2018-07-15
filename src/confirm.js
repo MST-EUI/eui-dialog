@@ -37,6 +37,7 @@ const ConfirmDialog = (props) => {
     locale,
   } = props;
   const prefixCls = props.prefixCls || 'eui-confirm';
+  const width = props.width || '390px';
   const okCancel = ('okCancel' in props) ? props.okCancel : true;
   const i18nText = i18n[locale];
   const okText = props.okText ||
@@ -46,6 +47,7 @@ const ConfirmDialog = (props) => {
   return (
     <Dialog
       className={classnames(prefixCls, `${prefixCls}-${type}`, className)}
+      width={width}
       title=""
       footer=""
       visible={visible}
