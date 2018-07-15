@@ -31,6 +31,10 @@
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
     }
   },
   "files": [
@@ -58,6 +62,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.8.2",
     "file-loader": "^0.9.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.2.0",
     "node-sass": "^4.8.3",
     "react": "^0.14.9",
