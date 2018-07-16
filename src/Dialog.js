@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import RcDialog from 'rc-dialog';
 import 'rc-dialog/assets/index.css';
@@ -10,7 +10,7 @@ const { PropTypes } = React;
 
 const isIE = window.navigator.userAgent.indexOf('MSIE') >= 1;
 
-export default class Dialog extends React.Component {
+export default class Dialog extends Component {
   static propTypes = {
     prefixCls: PropTypes.string,
     width: PropTypes.oneOfType([
@@ -26,7 +26,7 @@ export default class Dialog extends React.Component {
 
   static defaultProps = {
     prefixCls: 'eui-dialog',
-    width: '520px',
+    width: '580px',
     locale: 'zh-cn',
     animation: 'zoom',
     maskAnimation: 'fade',
@@ -36,11 +36,11 @@ export default class Dialog extends React.Component {
 
   componentDidUpdate() {
     const { props } = this;
-    // 如果内容宽度超过520px，则底部操作按钮居右对齐
+    // 如果内容宽度超过580px，则底部操作按钮居右对齐
     if (props.visible) {
       const dlgBody = this.rcDialog._component.body;
       const dlgFooter = document.querySelector(`.${props.prefixCls}-footer`);
-      if (dlgBody.offsetWidth >= 520) {
+      if (dlgBody.offsetWidth >= 580) {
         dlgFooter.style.textAlign = 'right';
       }
     }

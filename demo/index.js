@@ -7,6 +7,7 @@ const {
   confirm, success, error, info,
 } = Dialog;
 const { log } = console;
+const { assign } = Object;
 
 const i18nText = {
   'zh-cn': {
@@ -27,36 +28,42 @@ const i18nText = {
   },
 };
 
-const confirmFunc = ({ locale = 'zh-cn' }) => {
-  confirm({
-    locale,
-    title: i18nText[locale].confirmTitle,
-    content: i18nText[locale].confirmContent,
-  });
+const confirmFunc = (props) => {
+  confirm(assign({
+    width: '580',
+    title: i18nText[props.locale || 'zh-cn'].confirmTitle,
+    content: i18nText[props.locale || 'zh-cn'].confirmContent,
+  }, props));
 };
 
-const successFunc = ({ locale = 'zh-cn' }) => {
-  success({
-    locale,
-    title: i18nText[locale].successTitle,
-    content: i18nText[locale].successContent,
-  });
+const manualClose = (props) => {
+  const confirmDlg = confirm(assign({
+    width: '580',
+    title: i18nText[props.locale || 'zh-cn'].confirmTitle,
+    content: i18nText[props.locale || 'zh-cn'].confirmContent,
+  }, props));
+  setTimeout(() => confirmDlg.close(), 1000);
 };
 
-const errorFunc = ({ locale = 'zh-cn' }) => {
-  error({
-    locale,
+const successFunc = (props) => {
+  success(assign({
+    title: i18nText[props.locale || 'zh-cn'].successTitle,
+    content: i18nText[props.locale || 'zh-cn'].successContent,
+  }, props));
+};
+
+const errorFunc = (props) => {
+  error(assign({
     title: '这是一个error的title',
     content: '这是一个error的content',
-  });
+  }, props));
 };
 
-const infoFunc = ({ locale = 'zh-cn' }) => {
-  info({
-    locale,
+const infoFunc = (props) => {
+  info(assign({
     title: '这是一个info的title',
     content: '这是一个info的content',
-  });
+  }, props));
 };
 
 class Basic extends React.Component {
@@ -102,7 +109,7 @@ class Basic extends React.Component {
           onClose={() => this.closeModal()}
         >
           <p>{i18nText['zh-cn'].basicContent}</p>
-          <span>这是一个超出换行的文本这是一个超出换行的文本这是一个超出换行的文本这是一个超出换行的文本</span>
+          <span>这是一个超出换行的文本这是一个超出换行的文本这是一个超出换行的文本这是一个超出换行的文本这是一个超出换行的文本</span>
         </Dialog>
       </div>
     );
@@ -180,12 +187,16 @@ class I18n extends React.Component {
   }
 }
 
+const ManualClose = () => <button onClick={manualClose}>Manual Close</button>;
+
 ReactDOM.render(
   <div className="demo">
     <h1>基本用法</h1>
     <Basic />
     <h1>确认对话框</h1>
     <Confirm />
+    <h1>手动关闭</h1>
+    <ManualClose />
     <h1>信息提示</h1>
     <Prompt />
     <h1>国际化</h1>
