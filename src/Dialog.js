@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import RcDialog from 'rc-dialog';
+import Button from '@mistong/eui-button';
 import 'rc-dialog/assets/index.css';
 import i18n from './i18n';
 
@@ -54,7 +55,6 @@ export default class Dialog extends Component {
     this.props.onCancel();
   }
 
-
   render() {
     const { props } = this;
 
@@ -63,13 +63,15 @@ export default class Dialog extends Component {
     const i18nText = i18n[locale];
 
     const defaultFooter = [
-      <button key="cancel" className="btn btn-cancel" onClick={() => this.handleCancel()}>
-        {i18nText.cancel}
-      </button>,
-      <button key="ok" className="btn btn-ok" onClick={() => this.handleOk()}>
-        {i18nText.ok}
-      </button>,
+      <Button key="cancel" onClick={() => this.handleCancel()}>{i18nText.cancel}</Button>,
+      <Button key="ok" onClick={() => this.handleOk()} color="blue">{i18nText.ok}</Button>,
     ];
+      // <button key="cancel" className="btn btn-cancel" onClick={() => this.handleCancel()}>
+      //   {i18nText.cancel}
+      // </button>,
+      // <button key="ok" className="btn btn-ok" onClick={() => this.handleOk()}>
+      //   {i18nText.ok}
+      // </button>,
     const wrapClassName = classnames({
       [props.wrapClassName]: !!props.wrapClassName,
       'vertical-center-dialog': !isIE,

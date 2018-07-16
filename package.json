@@ -75,6 +75,7 @@
     "webpack-hot-middleware": "^2.22.2"
   },
   "dependencies": {
+    "@mistong/eui-button": "^0.1.1",
     "@mistong/eui-css": "^0.1.2",
     "classnames": "^2.2.6",
     "rc-dialog": "^7.1.7"

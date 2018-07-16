@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Dialog from './Dialog';
+import Button from '@mistong/eui-button';
 import i18n from './i18n';
 import './style/index.scss';
 
@@ -64,7 +65,7 @@ class ConfirmDialog extends Component {
     const okText = props.okText ||
       okCancel ? i18nText.ok : i18nText.isee;
     const cancelText = props.cancelText || i18nText.cancel;
-    const cancelBtn = okCancel && <button className="btn btn-cancel" onClick={() => clickFn(onCancel, close)}>{cancelText}</button>;
+    const cancelBtn = okCancel && <Button onClick={() => clickFn(onCancel, close)}>{cancelText}</Button>;
     return (
       <Dialog
         ref={(c) => { this.euiDialog = c; }}
@@ -82,7 +83,7 @@ class ConfirmDialog extends Component {
         </div>
         <div className={`${prefixCls}-action`}>
           {cancelBtn}
-          <button className="btn btn-ok" onClick={() => clickFn(onOk, close)}>{okText}</button>
+          <Button color="blue" onClick={() => clickFn(onOk, close)}>{okText}</Button>
         </div>
       </Dialog>
     );
