@@ -28,7 +28,7 @@ const i18nText = {
   },
 };
 
-const confirmFunc = (props) => {
+const confirmFunc = (props = {}) => {
   confirm(assign({
     width: '580',
     title: i18nText[props.locale || 'zh-cn'].confirmTitle,
@@ -36,7 +36,7 @@ const confirmFunc = (props) => {
   }, props));
 };
 
-const manualClose = (props) => {
+const manualClose = (props = {}) => {
   const confirmDlg = confirm(assign({
     width: '580',
     title: i18nText[props.locale || 'zh-cn'].confirmTitle,
@@ -45,21 +45,21 @@ const manualClose = (props) => {
   setTimeout(() => confirmDlg.close(), 1000);
 };
 
-const successFunc = (props) => {
+const successFunc = (props = {}) => {
   success(assign({
     title: i18nText[props.locale || 'zh-cn'].successTitle,
     content: i18nText[props.locale || 'zh-cn'].successContent,
   }, props));
 };
 
-const errorFunc = (props) => {
+const errorFunc = (props = {}) => {
   error(assign({
     title: '这是一个error的title',
     content: '这是一个error的content',
   }, props));
 };
 
-const infoFunc = (props) => {
+const infoFunc = (props = {}) => {
   info(assign({
     title: '这是一个info的title',
     content: '这是一个info的content',
@@ -116,14 +116,14 @@ class Basic extends React.Component {
   }
 }
 
-const Confirm = () => <button onClick={confirmFunc}>Confirm Dialog</button>;
+const Confirm = () => <button onClick={() => confirmFunc()}>Confirm Dialog</button>;
 
 
 const Prompt = () => (
   <div className="prompt">
-    <button onClick={successFunc}>success</button>
-    <button onClick={errorFunc}>error</button>
-    <button onClick={infoFunc}>info</button>
+    <button onClick={() => successFunc()}>success</button>
+    <button onClick={() => errorFunc()}>error</button>
+    <button onClick={() => infoFunc()}>info</button>
   </div>
 );
 
