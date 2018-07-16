@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import assign from 'object-assign';
 import Dialog from '../src/index';
 import './demo.scss';
 
@@ -7,7 +8,6 @@ const {
   confirm, success, error, info,
 } = Dialog;
 const { log } = console;
-const { assign } = Object;
 
 const i18nText = {
   'zh-cn': {

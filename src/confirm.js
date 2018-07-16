@@ -31,6 +31,7 @@ class ConfirmDialog extends Component {
     width: '390px',
     locale: 'zh-cn',
     okCancel: true,
+    maskClosable: false,
   }
   componentDidMount() {
     const { props } = this;
@@ -47,7 +48,6 @@ class ConfirmDialog extends Component {
     const { props } = this;
     const {
       prefixCls,
-      width,
       visible,
       title,
       content,
@@ -58,6 +58,7 @@ class ConfirmDialog extends Component {
       okCancel,
       close,
       locale,
+      ...rest
     } = props;
     const i18nText = i18n[locale];
     const okText = props.okText ||
@@ -68,11 +69,11 @@ class ConfirmDialog extends Component {
       <Dialog
         ref={(c) => { this.euiDialog = c; }}
         className={classnames(prefixCls, `${prefixCls}-${type}`, className)}
-        width={width}
         title=""
         footer=""
         visible={visible}
         onClose={() => clickFn(onCancel, close)}
+        {...rest}
       >
         <div className={`${prefixCls}-body`}>
           <i className={`eui-icon eui-icon-${type}`} />
