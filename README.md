@@ -1,6 +1,6 @@
 # eui-dialog
-react dialog component
-
+eui dialog component
+弹窗组件
 # Usage
 ```
 import React from 'react';
