@@ -75,3 +75,9 @@ onCancel | Function | () => {} | 点击取消回调，参数为关闭函数，�
 const ref = Dialog.info();
 ref.close();
 ```
+
+# 开发规约
+- fork项目到自己仓库
+- `npm i`
+- 编辑器开启`eslint`
+- 提交代码信息使用`git-cz`

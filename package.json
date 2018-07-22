@@ -9,6 +9,7 @@
     "build": "eui build",
     "test": "jest",
     "coverage": "jest --coverage",
+    "commit": "git-cz",
     "lint": "eslint ./src & eslint ./demo & eslint ./__test__ & eslint ./__mocks__",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
@@ -51,6 +52,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.3.13",
     "css-loader": "^0.26.1",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-14": "^1.0.5",
     "es3ify-loader": "^0.2.0",
@@ -79,5 +81,10 @@
     "@mistong/eui-css": "^0.1.2",
     "classnames": "^2.2.6",
     "rc-dialog": "^7.1.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
