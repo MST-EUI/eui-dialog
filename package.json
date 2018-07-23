@@ -1,6 +1,6 @@
 {
   "name": "@mistong/eui-dialog",
-  "version": "0.1.3",
+  "version": "0.1.2",
   "description": "eui-dialog component",
   "main": "dist/index.js",
   "scripts": {
