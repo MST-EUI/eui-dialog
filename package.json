@@ -10,7 +10,7 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "commit": "git-cz",
-    "lint": "eslint ./src & eslint ./demo & eslint ./__test__ & eslint ./__mocks__",
+    "lint": "eslint --ext .jsx,.js [src/, demo/, __test__/]",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "author": "mistong eui team",

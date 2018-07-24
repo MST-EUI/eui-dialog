@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-import Dialog from './Dialog';
 import Button from '@mistong/eui-button';
+import Dialog from './Dialog';
 import i18n from './i18n';
 import './style/index.scss';
 
