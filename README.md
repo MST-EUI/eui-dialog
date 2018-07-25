@@ -42,6 +42,7 @@ onCancel | Function | () => {} | 点击取消回调，参数为关闭函数，�
 包含：
 - `Dialog.confirm`
 - `Dialog.success`
+- `Dialog.warning`
 - `Dialog.error`
 - `Dialog.info`
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Button from '@mistong/eui-button';
+import Icon from '@mistong/eui-icon';
 import Dialog from './Dialog';
 import i18n from './i18n';
 import './style/index.scss';
@@ -61,6 +62,7 @@ class ConfirmDialog extends Component {
       locale,
       ...rest
     } = props;
+    const iconType = type === 'confirm' ? 'info' : type;
     const i18nText = i18n[locale];
     const okText = props.okText ||
       okCancel ? i18nText.ok : i18nText.isee;
@@ -77,7 +79,7 @@ class ConfirmDialog extends Component {
         {...rest}
       >
         <div className={`${prefixCls}-body`}>
-          <i className={`eui-icon eui-icon-${type}`} />
+          <Icon className={`eui-icon eui-icon-${type}`} type={iconType} />
           <span className={`${prefixCls}-title`}>{title}</span>
           <div className={`${prefixCls}-content`}>{content}</div>
         </div>

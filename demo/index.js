@@ -5,7 +5,7 @@ import Dialog from '../src/index';
 import './demo.scss';
 
 const {
-  confirm, success, error, info,
+  confirm, success, warning, error, info,
 } = Dialog;
 const { log } = console;
 
@@ -49,6 +49,13 @@ const successFunc = (props = {}) => {
   success(assign({
     title: i18nText[props.locale || 'zh-cn'].successTitle,
     content: i18nText[props.locale || 'zh-cn'].successContent,
+  }, props));
+};
+
+const warningFunc = (props = {}) => {
+  warning(assign({
+    title: '这是一个warning的title',
+    content: '这是一个warning的content',
   }, props));
 };
 
@@ -122,6 +129,7 @@ const Confirm = () => <button onClick={() => confirmFunc()}>Confirm Dialog</butt
 const Prompt = () => (
   <div className="prompt">
     <button onClick={() => successFunc()}>success</button>
+    <button onClick={() => warningFunc()}>warning</button>
     <button onClick={() => errorFunc()}>error</button>
     <button onClick={() => infoFunc()}>info</button>
   </div>

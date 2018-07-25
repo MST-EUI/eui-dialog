@@ -1,5 +1,12 @@
 @import './node_modules/@mistong/eui-css/variable.scss';
-
+@font-face {
+  font-family: 'iconfont';  /* project id 725751 */
+  src: url('//at.alicdn.com/t/font_725751_k84o5g5zq8i.eot');
+  src: url('//at.alicdn.com/t/font_725751_k84o5g5zq8i.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_725751_k84o5g5zq8i.woff') format('woff'),
+  url('//at.alicdn.com/t/font_725751_k84o5g5zq8i.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_725751_k84o5g5zq8i.svg#iconfont') format('svg');
+}
 $prefix: 'eui-dialog';
 
 .btn {

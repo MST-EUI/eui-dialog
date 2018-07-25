@@ -2,43 +2,29 @@ $confirmPrefix: 'eui-confirm';
 
 .#{$confirmPrefix} {
     .#{$prefix}-body {
-        padding: 30px 40px;
+        padding: 10px 30px 30px;
         .eui-icon {
             display: inline-block;
             vertical-align: top;
-            font-size: 20px;
-            line-height: 26px;
-            width: 26px;
-            height: 26px;
+            font-size: 24px;
             margin-right: 10px;
             border-radius: 50%;
-            color: #fff;
             font-style: normal;
             text-align: center;
-            font-weight: 600;
             &.eui-icon-confirm {
-                background-color: #ffb70b;
-                &:after {
-                    content: 'i';
-                }
+                color: #ffb70b;
             }
             &.eui-icon-success {
-                background-color: #31dacf;
-                &:after {
-                    content: '✓';
-                }
+                color: #63D08C;
             }
             &.eui-icon-error {
-                background-color: #ff667d;
-                &:after {
-                    content: '×';
-                }
+                color: #FF5353;
             }
             &.eui-icon-info {
-                background-color: #2e86ff;
-                &:after {
-                    content: 'i';
-                }
+                color: #2E86FF;
+            }
+            &.eui-icon-warning {
+                color: #FF6103;
             }
         }
     }

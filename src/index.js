@@ -20,6 +20,15 @@ Dialog.success = (props) => {
   return confirm(config);
 };
 
+Dialog.warning = (props) => {
+  const config = {
+    type: 'warning',
+    okCancel: false,
+    ...props,
+  };
+  return confirm(config);
+};
+
 Dialog.error = (props) => {
   const config = {
     type: 'error',

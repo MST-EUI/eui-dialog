@@ -34,7 +34,7 @@
   }
 
   &-header {
-    padding: 12px 40px 16px 30px;
+    padding: 10px 40px 16px 30px;
   }
 
   &-title {
@@ -47,15 +47,16 @@
     cursor: pointer;
     border: 0;
     background: transparent;
-    font-size: 21px;
+    font-size: 18px;
     position: absolute;
     right: 12px;
     top: 12px;
-    font-weight: 700;
     line-height: 1;
     color: $gray-light;
     &-x:after {
-      content: '×'
+      display: block;
+      font-family: 'iconfont';
+      content: '\e63c';
     }
     &:hover {
       color: #2f86ff;
