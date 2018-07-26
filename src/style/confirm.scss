@@ -33,15 +33,15 @@ $confirmPrefix: 'eui-confirm';
         font-size:20px;
         line-height:26px;
     }
-    &-content {
+    &-body {
         margin-left: 36px;
-        margin-top: 10px;
-        color: #434F59;
+        padding-top: 32px;
+        padding-bottom: 40px;
+        color: #666;
         font-size: 14px;
         line-height: 22px;
     }
     &-action {
-        margin-top: 30px;
         text-align: center;
         button {
             margin-right: 20px;

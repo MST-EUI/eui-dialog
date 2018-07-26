@@ -195,7 +195,7 @@ class I18n extends React.Component {
   }
 }
 
-const ManualClose = () => <button onClick={manualClose}>Manual Close</button>;
+const ManualClose = () => <button onClick={() => manualClose()}>Manual Close</button>;
 
 ReactDOM.render(
   <div className="demo">

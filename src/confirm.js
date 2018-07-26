@@ -78,11 +78,11 @@ class ConfirmDialog extends Component {
         onClose={() => clickFn(onCancel, close)}
         {...rest}
       >
-        <div className={`${prefixCls}-body`}>
+        <div className={`${prefixCls}-header`}>
           <Icon className={`eui-icon eui-icon-${type}`} type={iconType} />
           <span className={`${prefixCls}-title`}>{title}</span>
-          <div className={`${prefixCls}-content`}>{content}</div>
         </div>
+        <div className={`${prefixCls}-body`}>{content}</div>
         <div className={`${prefixCls}-action`}>
           {cancelBtn}
           <Button color="blue" onClick={() => clickFn(onOk, close)}>{okText}</Button>
