@@ -12,6 +12,11 @@
 * 添加eui-icon图标，添加warning快捷模式 ([a53144c](https://github.com/MST-EUI/eui-dialog/commit/a53144c))
 
 
+### Reverts
+
+* 回滚版本 ([8276f39](https://github.com/MST-EUI/eui-dialog/commit/8276f39))
+
+
 
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/MST-EUI/eui-dialog/compare/v0.1.2...v0.1.3) (2018-07-23)
