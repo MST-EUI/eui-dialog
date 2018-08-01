@@ -12,7 +12,7 @@
     "lint": "eslint --ext .jsx,.js .",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "cz": "git-cz",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged && npm run test"
   },
   "contributors": [
     "mistong eui"
