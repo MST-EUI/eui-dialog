@@ -14,7 +14,7 @@
     "cz": "git-cz",
     "precommit": "lint-staged && npm run test",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "version": "npm run changelog && git add CHANGELOD.md",
+    "version": "npm run changelog && git add -A",
     "postversion": "git push && git push --tags",
     "prepublish": "npm run build && exit 1"
   },

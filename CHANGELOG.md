@@ -1,23 +1,58 @@
-<a name="0.1.0"></a>
-# 0.1.0 (2018-07-12)
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/MST-EUI/eui-dialog/compare/v0.1.3...v0.1.4) (2018-08-01)
 
 
 ### Bug Fixes
 
+* UI验收，样式修改 ([1cba438](https://github.com/MST-EUI/eui-dialog/commit/1cba438))
+
+
+### Features
+
+* 添加eui-icon图标，添加warning快捷模式 ([a53144c](https://github.com/MST-EUI/eui-dialog/commit/a53144c))
+
+
+
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/MST-EUI/eui-dialog/compare/v0.1.2...v0.1.3) (2018-07-23)
+
+
+### Reverts
+
+* 回滚版本 ([2e088ef](https://github.com/MST-EUI/eui-dialog/commit/2e088ef))
+
+
+
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/MST-EUI/eui-dialog/compare/v0.1.1...v0.1.2) (2018-07-23)
+
+
+
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/MST-EUI/eui-dialog/compare/37c04f7...v0.1.1) (2018-07-23)
+
+
+### Bug Fixes
+
+* demo修改 ([8f3eafb](https://github.com/MST-EUI/eui-dialog/commit/8f3eafb))
 * 修复package-lock.json里不安全依赖的版本 ([fe438aa](https://github.com/MST-EUI/eui-dialog/commit/fe438aa))
 
 
 ### Features
 
+* add changelog workflow ([65d5d59](https://github.com/MST-EUI/eui-dialog/commit/65d5d59))
 * confirm功能完善 ([d75de29](https://github.com/MST-EUI/eui-dialog/commit/d75de29))
 * demo完成基本用法，确认弹窗，信息提示，国际化 ([fc2626c](https://github.com/MST-EUI/eui-dialog/commit/fc2626c))
 * dialog基本用法 ([4ad88d8](https://github.com/MST-EUI/eui-dialog/commit/4ad88d8))
+* import eui-button to replace button ([61ce053](https://github.com/MST-EUI/eui-dialog/commit/61ce053))
 * update package name ([c789424](https://github.com/MST-EUI/eui-dialog/commit/c789424))
+* 内容宽度超出520px,底部操作按钮居右对齐 ([65b3740](https://github.com/MST-EUI/eui-dialog/commit/65b3740))
 * 初始化项目模板 ([37c04f7](https://github.com/MST-EUI/eui-dialog/commit/37c04f7))
 * 完善confirm ([6b11f5c](https://github.com/MST-EUI/eui-dialog/commit/6b11f5c))
 * 完善demo ([7db2ff0](https://github.com/MST-EUI/eui-dialog/commit/7db2ff0))
 * 添加 confirm ([33a9836](https://github.com/MST-EUI/eui-dialog/commit/33a9836))
 * 添加dialog进出场动效 ([9e47137](https://github.com/MST-EUI/eui-dialog/commit/9e47137))
+* 添加手动关闭demo，confirm添加componentDidMount生命周期判断 ([ef69225](https://github.com/MST-EUI/eui-dialog/commit/ef69225))
 
 
 
