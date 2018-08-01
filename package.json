@@ -12,7 +12,11 @@
     "lint": "eslint --ext .jsx,.js .",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "cz": "git-cz",
-    "precommit": "lint-staged && npm run test"
+    "precommit": "lint-staged && npm run test",
+    "commitmsg": "commitlint -E GIT_PARAMS",
+    "version": "npm run changelog && git add CHANGELOD.md",
+    "postversion": "git push && git push --tags",
+    "prepublish": "npm run build && exit 1"
   },
   "contributors": [
     "mistong eui"
@@ -46,6 +50,8 @@
     "src"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
     "@mistong/eui-cli": "^0.1.6",
     "babel-core": "^6.10.4",
     "babel-eslint": "^7.2.3",
