@@ -10,9 +10,6 @@
     "node": true,
     "jest/globals": true
   },
-  "globals": {
-
-  },
   "rules": {
     "func-names": 0,
     "arrow-body-style": 0,
