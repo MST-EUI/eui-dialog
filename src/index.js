@@ -47,5 +47,5 @@ Dialog.info = (props) => {
   return confirm(config);
 };
 
-export default Dialog;
+module.exports = Dialog;
 

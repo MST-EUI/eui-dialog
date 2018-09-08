@@ -12,6 +12,7 @@ const { PropTypes } = React;
 const isIE = window.navigator.userAgent.indexOf('MSIE') >= 1;
 
 export default class Dialog extends Component {
+  static displayName = 'Dialog';
   static propTypes = {
     prefixCls: PropTypes.string,
     width: PropTypes.oneOfType([
@@ -66,12 +67,6 @@ export default class Dialog extends Component {
       <Button key="cancel" onClick={() => this.handleCancel()}>{i18nText.cancel}</Button>,
       <Button key="ok" onClick={() => this.handleOk()} color="blue">{i18nText.ok}</Button>,
     ];
-      // <button key="cancel" className="btn btn-cancel" onClick={() => this.handleCancel()}>
-      //   {i18nText.cancel}
-      // </button>,
-      // <button key="ok" className="btn btn-ok" onClick={() => this.handleOk()}>
-      //   {i18nText.ok}
-      // </button>,
     const wrapClassName = classnames({
       [props.wrapClassName]: !!props.wrapClassName,
       'vertical-center-dialog': !isIE,
