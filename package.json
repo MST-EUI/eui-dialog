@@ -16,7 +16,7 @@
     "commitmsg": "commitlint -E GIT_PARAMS",
     "version": "npm run changelog && git add CHANGELOG.md",
     "postversion": "git push && git push --tags",
-    "prepare": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "contributors": [
     "mistong eui"
