@@ -1,3 +1,19 @@
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/MST-EUI/eui-dialog/compare/v0.1.4...v0.1.5) (2018-10-16)
+
+
+### Bug Fixes
+
+* **export:** change export.deafult to module.export ([1c0853f](https://github.com/MST-EUI/eui-dialog/commit/1c0853f))
+
+
+### Features
+
+* demo update to be new ([0dc02c9](https://github.com/MST-EUI/eui-dialog/commit/0dc02c9))
+* remove redundant loader ([53b8978](https://github.com/MST-EUI/eui-dialog/commit/53b8978))
+
+
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/MST-EUI/eui-dialog/compare/v0.1.3...v0.1.4) (2018-08-01)
 
