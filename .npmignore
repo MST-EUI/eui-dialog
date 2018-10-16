@@ -26,7 +26,6 @@ _site
 sea-modules
 spm_modules
 .cache
-demo
 __mocks__
 __test__
 .babelrc

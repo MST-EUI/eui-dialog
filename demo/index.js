@@ -1,8 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import assign from 'object-assign';
-import Dialog from '../src/index';
-import './demo.scss';
+import {
+  Demo,
+  Code,
+} from '@mistong/eui';
+
+/* placeholder begin eui style */
+import '@mistong/eui/dist/index.css';
+/* placeholder end eui style */
+
+/* placeholder begin src */
+import Dialog from '../src';
+/* placeholder end src */
+import './index.scss';
 
 const {
   confirm, success, warning, error, info,
@@ -197,18 +208,93 @@ class I18n extends React.Component {
 
 const ManualClose = () => <button onClick={() => manualClose()}>Manual Close</button>;
 
+/* placeholder begin class */
+class DemoComponent extends React.Component {
+  render() {
+    const sourceCode = `import { Dialog } from '@mistong/eui';
+
+<Dialog />
+`;
+    return (
+      <Demo>
+        <h2>基本用法</h2>
+        <p>对话框，通过打开一个浮层的方式，避免打扰用户的操作流程。</p>
+        <h3>代码演示</h3>
+        <Code sourceCode={sourceCode}>
+          <Basic />
+          <h1>确认对话框</h1>
+          <Confirm />
+          <h1>手动关闭</h1>
+          <ManualClose />
+          <h1>信息提示</h1>
+          <Prompt />
+          <h1>国际化</h1>
+          <I18n />
+        </Code>
+        <h3>API</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>参数</th>
+              <th>说明</th>
+              <th>类型</th>
+              <th>默认值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>type</td>
+              <td>背景图片类型 (<Code mode="inline">small</Code> <Code mode="inline">medium</Code> <Code mode="inline">large</Code>)</td>
+              <td>string</td>
+              <td><Code mode="inline">medium</Code></td>
+            </tr>
+            <tr>
+              <td>children</td>
+              <td>描述文案</td>
+              <td>any</td>
+              <td>暂无数据</td>
+            </tr>
+            <tr>
+              <td>icon</td>
+              <td>自定义图片</td>
+              <td>string</td>
+              <td>https://yukap6.github.io/images/empty.png</td>
+            </tr>
+            <tr>
+              <td>lang</td>
+              <td>语言包类型 (<Code mode="inline">zh-cn</Code> <Code mode="inline">en</Code>)</td>
+              <td>string</td>
+              <td><Code mode="inline">zh-cn</Code></td>
+            </tr>
+            <tr>
+              <td>className</td>
+              <td>添加自定义class</td>
+              <td>string</td>
+              <td><Code mode="inline">&#39;&#39;</Code></td>
+            </tr>
+            <tr>
+              <td>style</td>
+              <td>自定义样式</td>
+              <td>object</td>
+              <td><Code mode="inline">{'{}'}</Code></td>
+            </tr>
+            <tr>
+              <td>prefixCls</td>
+              <td>样式名前缀</td>
+              <td>string</td>
+              <td>eui-empty-data</td>
+            </tr>
+          </tbody>
+        </table>
+      </Demo>
+    );
+  }
+}
+/* placeholder end class */
+
+/* placeholder begin ReactDOM */
 ReactDOM.render(
-  <div className="demo">
-    <h1>基本用法</h1>
-    <Basic />
-    <h1>确认对话框</h1>
-    <Confirm />
-    <h1>手动关闭</h1>
-    <ManualClose />
-    <h1>信息提示</h1>
-    <Prompt />
-    <h1>国际化</h1>
-    <I18n />
-  </div>,
+  <DemoComponent />,
   document.getElementById('app'),
 );
+/* placeholder end ReactDOM */

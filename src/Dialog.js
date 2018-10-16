@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import RcDialog from 'rc-dialog';
-import Button from '@mistong/eui-button';
-import 'rc-dialog/assets/index.css';
-import i18n from './i18n';
+import '@mistong/eui/dist/index.css';
+import { Button } from '@mistong/eui';
 
 import './style/index.scss';
+import i18n from './i18n';
 
 const { PropTypes } = React;
 
@@ -40,7 +40,7 @@ export default class Dialog extends Component {
     const { props } = this;
     // 如果内容宽度超过580px，则底部操作按钮居右对齐
     if (props.visible) {
-      const dlgBody = this.rcDialog._component.body;
+      const dlgBody = this.rcDialog._component.body; // eslint-disable-line
       const dlgFooter = document.querySelector(`.${props.prefixCls}-footer`);
       if (dlgBody.offsetWidth >= 580) {
         dlgFooter.style.textAlign = 'right';
