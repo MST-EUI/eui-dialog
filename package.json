@@ -44,6 +44,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "@mistong/eui-button": "^0.1.5",
     "@mistong/eui-cli": "latest",
     "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",

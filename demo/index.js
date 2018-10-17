@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import assign from 'object-assign';
+import Button from '@mistong/eui-button';
 import {
   Demo,
   Code,
@@ -117,7 +118,7 @@ class Basic extends React.Component {
   render() {
     return (
       <div className="basic">
-        <button onClick={() => this.showModal()}>Basic Dialog</button>
+        <Button onClick={() => this.showModal()}>Basic Dialog</Button>
         <Dialog
           ref={(c) => { this.dialog = c; }}
           title={i18nText['zh-cn'].basicTitle}
@@ -134,15 +135,15 @@ class Basic extends React.Component {
   }
 }
 
-const Confirm = () => <button onClick={() => confirmFunc()}>Confirm Dialog</button>;
+const Confirm = () => <Button onClick={() => confirmFunc()}>Confirm Dialog</Button>;
 
 
 const Prompt = () => (
   <div className="prompt">
-    <button onClick={() => successFunc()}>success</button>
-    <button onClick={() => warningFunc()}>warning</button>
-    <button onClick={() => errorFunc()}>error</button>
-    <button onClick={() => infoFunc()}>info</button>
+    <Button onClick={() => successFunc()}>success</Button>
+    <Button onClick={() => warningFunc()}>warning</Button>
+    <Button onClick={() => errorFunc()}>error</Button>
+    <Button onClick={() => infoFunc()}>info</Button>
   </div>
 );
 
@@ -179,7 +180,7 @@ class I18n extends React.Component {
   render() {
     return (
       <div className="i18n">
-        <button onClick={() => this.showModal()}>i18n Dialog</button>
+        <Button onClick={() => this.showModal()}>i18n Dialog</Button>
         <Dialog
           locale="en"
           ref={(c) => { this.dialog = c; }}
@@ -191,44 +192,192 @@ class I18n extends React.Component {
         >
           <p>{i18nText.en.basicContent}</p>
         </Dialog>
-        <button onClick={() => confirmFunc({
+        <Button onClick={() => confirmFunc({
           locale: 'en',
         })}
         >i18n confirm
-        </button>
-        <button onClick={() => successFunc({
+        </Button>
+        <Button onClick={() => successFunc({
           locale: 'en',
         })}
         >i18n success
-        </button>
+        </Button>
       </div>
     );
   }
 }
 
-const ManualClose = () => <button onClick={() => manualClose()}>Manual Close</button>;
+const ManualClose = () => <Button onClick={() => manualClose()}>Manual Close</Button>;
 
 /* placeholder begin class */
 class DemoComponent extends React.Component {
   render() {
-    const sourceCode = `import { Dialog } from '@mistong/eui';
+    const basicCode = `
+      import { Dialog, Button } from "@mistong/eui";
 
-<Dialog />
-`;
+      class Basic extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            visible: false,
+          };
+        }
+
+        showModal() {
+          this.setState({
+            visible: true,
+          });
+        }
+
+        closeModal() {
+          this.setState({
+            visible: false,
+          });
+        }
+
+        handleOk() {
+          log('action: handle ok button');
+          this.closeModal();
+        }
+
+        handleCancel() {
+          log('action: handle cancel button');
+          this.closeModal();
+        }
+
+        render() {
+          return (
+            <div className="basic">
+              <Button onClick={() => this.showModal()}>Basic Dialog</Button>
+              <Dialog
+                ref={(c) => { this.dialog = c; }}
+                title={i18nText['zh-cn'].basicTitle}
+                visible={this.state.visible}
+                onOk={() => this.handleOk()}
+                onCancel={() => this.handleCancel()}
+                onClose={() => this.closeModal()}
+              >
+                <p>{i18nText['zh-cn'].basicContent}</p>
+                <span>这是一个超出换行的文本这是一个超出换行的文本这是一个超出换行的文本这是一个超出换行的文本这是一个超出换行的文本</span>
+              </Dialog>
+            </div>
+          );
+        }
+      }
+    `;
+    const confirmCode = `
+      import { Dialog, Button } from "@mistong/eui";
+
+      const Confirm = () => <Button onClick={() => confirmFunc()}>Confirm Dialog</Button>;
+
+    `;
+    const promptCode = `
+      import { Dialog, Button } from "@mistong/eui";
+
+      <div className="prompt">
+        <Button onClick={() => successFunc()}>success</Button>
+        <Button onClick={() => warningFunc()}>warning</Button>
+        <Button onClick={() => errorFunc()}>error</Button>
+        <Button onClick={() => infoFunc()}>info</Button>
+      </div>
+    `;
+
+    const manualCode = `
+      import { Dialog, Button } from "@mistong/eui";
+
+      const manualClose = (props = {}) => {
+        const confirmDlg = confirm(assign({
+          width: '580',
+          title: i18nText[props.locale || 'zh-cn'].confirmTitle,
+          content: i18nText[props.locale || 'zh-cn'].confirmContent,
+        }, props));
+        setTimeout(() => confirmDlg.close(), 1000);
+      };
+
+      const ManualClose = () => <Button onClick={() => manualClose()}>Manual Close</Button>;
+    `;
+
+    const i18nCode = `
+      import { Dialog, Button } from "@mistong/eui";
+      class I18n extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            visible: false,
+          };
+        }
+
+        showModal() {
+          this.setState({
+            visible: true,
+          });
+        }
+
+        closeModal() {
+          this.setState({
+            visible: false,
+          });
+        }
+
+        handleOk() {
+          log('action: handle ok button');
+          this.closeModal();
+        }
+
+        handleCancel() {
+          log('action: handle cancel button');
+          this.closeModal();
+        }
+
+        render() {
+          return (
+            <div className="i18n">
+              <Button onClick={() => this.showModal()}>i18n Dialog</Button>
+              <Dialog
+                locale="en"
+                ref={(c) => { this.dialog = c; }}
+                title={i18nText.en.basicTitle}
+                visible={this.state.visible}
+                onOk={() => this.handleOk()}
+                onCancel={() => this.handleCancel()}
+                onClose={() => this.closeModal()}
+              >
+                <p>{i18nText.en.basicContent}</p>
+              </Dialog>
+              <Button onClick={() => confirmFunc({
+                locale: 'en',
+              })}
+              >i18n confirm
+              </Button>
+              <Button onClick={() => successFunc({
+                locale: 'en',
+              })}
+              >i18n success
+              </Button>
+            </div>
+          );
+        }
+      }
+    `;
+
     return (
       <Demo>
         <h2>基本用法</h2>
         <p>对话框，通过打开一个浮层的方式，避免打扰用户的操作流程。</p>
         <h3>代码演示</h3>
-        <Code sourceCode={sourceCode}>
+        <Code buttonText="基础对话框" sourceCode={basicCode}>
           <Basic />
-          <h1>确认对话框</h1>
+        </Code>
+        <Code buttonText="确认对话框" sourceCode={confirmCode}>
           <Confirm />
-          <h1>手动关闭</h1>
+        </Code>
+        <Code buttonText="自动关闭" sourceCode={manualCode}>
           <ManualClose />
-          <h1>信息提示</h1>
+        </Code>
+        <Code buttonText="信息提示" sourceCode={promptCode}>
           <Prompt />
-          <h1>国际化</h1>
+        </Code>
+        <Code buttonText="国际化" sourceCode={i18nCode}>
           <I18n />
         </Code>
         <h3>API</h3>
