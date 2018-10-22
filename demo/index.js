@@ -392,6 +392,20 @@ class DemoComponent extends React.Component {
       }
     `;
 
+    const methodCode = `
+      // usage example
+
+      Dialog.confirm({
+        title: '这是一个confirm的title',
+        content: '这是一个confirm的content',
+      })
+    `;
+
+    const closeCode = `
+      const ref = Dialog.info();
+      ref.close();
+    `;
+
     return (
       <Demo className="demo">
         <h2>基本用法</h2>
@@ -498,6 +512,7 @@ class DemoComponent extends React.Component {
           <li>Dialog.error</li>
           <li>Dialog.info</li>
         </ul>
+        <Code mode="codeOnly" sourceCode={methodCode} />
         <p>以上均为一个函数，参数为 object，具体属性如下：</p>
         <table>
           <thead>
@@ -576,12 +591,7 @@ class DemoComponent extends React.Component {
           </tbody>
         </table>
         <p>以上函数调用后，会返回一个引用，可以通过该引用关闭弹窗。</p>
-        <pre>
-          <code>
-            <p>const ref = Dialog.info();</p>
-            <p>ref.close();</p>
-          </code>
-        </pre>
+        <Code mode="codeOnly" sourceCode={closeCode}/>
       </Demo>
     );
   }
