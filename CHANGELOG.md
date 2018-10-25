@@ -1,9 +1,10 @@
-<a name="0.1.8"></a>
-## [0.1.8](https://github.com/MST-EUI/eui-dialog/compare/v0.1.7...v0.1.8) (2018-10-25)
+<a name="0.1.9"></a>
+## [0.1.9](https://github.com/MST-EUI/eui-dialog/compare/v0.1.7...v0.1.9) (2018-10-25)
 
 
 ### Bug Fixes
 
+* removed useless demo style ([f721de6](https://github.com/MST-EUI/eui-dialog/commit/f721de6))
 * removed useless style ([7cb6977](https://github.com/MST-EUI/eui-dialog/commit/7cb6977))
 
 
