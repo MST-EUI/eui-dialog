@@ -406,9 +406,11 @@ class DemoComponent extends React.Component {
       ref.close();
     `;
 
+    const loopFunc = '() => {}';
+
     return (
       <Demo className="demo">
-        <h2>基本用法</h2>
+        <h2>Dialog 对话框</h2>
         <p>对话框，通过打开一个浮层的方式，避免打扰用户的操作流程。</p>
         <h3>代码演示</h3>
         <Code buttonText="基础对话框" sourceCode={basicCode}>
@@ -452,7 +454,7 @@ class DemoComponent extends React.Component {
             <tr>
               <td>prefixCls</td>
               <td>String</td>
-              <td>"eui-dialog"</td>
+              <td><Code mode="inline">eui-dialog</Code></td>
               <td>自定义类名前缀</td>
             </tr>
             <tr>
@@ -464,7 +466,7 @@ class DemoComponent extends React.Component {
             <tr>
               <td>width</td>
               <td>String | Number</td>
-              <td>"580px"</td>
+              <td><Code mode="inline">580px</Code></td>
               <td>宽度</td>
             </tr>
             <tr>
@@ -482,7 +484,7 @@ class DemoComponent extends React.Component {
             <tr>
               <td>onOk</td>
               <td>Function</td>
-              <td>`() => {}`</td>
+              <td><Code mode="inline">{loopFunc}</Code></td>
               <td>
                 点击确定回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭
               </td>
@@ -490,7 +492,7 @@ class DemoComponent extends React.Component {
             <tr>
               <td>onCancel</td>
               <td>Function</td>
-              <td>`() => {}`</td>
+              <td><Code mode="inline">{loopFunc}</Code></td>
               <td>
                 点击取消回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭
               </td>
@@ -545,7 +547,7 @@ class DemoComponent extends React.Component {
             <tr>
               <td>width</td>
               <td>String | Number</td>
-              <td>"390px"</td>
+              <td><Code mode="inline">390px</Code></td>
               <td>宽度</td>
             </tr>
             <tr>
@@ -575,7 +577,7 @@ class DemoComponent extends React.Component {
             <tr>
               <td>onOk</td>
               <td>Function</td>
-              <td>`() => {}`</td>
+              <td><Code mode="inline">{loopFunc}</Code></td>
               <td>
                 点击确定回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭
               </td>
@@ -583,7 +585,7 @@ class DemoComponent extends React.Component {
             <tr>
               <td>onCancel</td>
               <td>Function</td>
-              <td>`() => {}`</td>
+              <td><Code mode="inline">{loopFunc}</Code></td>
               <td>
                 点击取消回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭
               </td>
@@ -591,7 +593,7 @@ class DemoComponent extends React.Component {
           </tbody>
         </table>
         <p>以上函数调用后，会返回一个引用，可以通过该引用关闭弹窗。</p>
-        <Code mode="codeOnly" sourceCode={closeCode}/>
+        <Code mode="codeOnly" sourceCode={closeCode} />
       </Demo>
     );
   }
