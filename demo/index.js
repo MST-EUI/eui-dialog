@@ -409,7 +409,7 @@ class DemoComponent extends React.Component {
     const loopFunc = '() => {}';
 
     return (
-      <Demo className="demo">
+      <Demo className="eui-dialog-demo">
         <h2>Dialog 对话框</h2>
         <p>对话框，通过打开一个浮层的方式，避免打扰用户的操作流程。</p>
         <h3>代码演示</h3>
